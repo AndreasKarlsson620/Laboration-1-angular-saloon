@@ -1,0 +1,16 @@
+.list
+{
+	border: 1px solid black;
+	padding: 0em;
+	margin: 1em;
+}
+.beverage
+{
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+}
+button
+{
+	border: 1px solid black; 
+}

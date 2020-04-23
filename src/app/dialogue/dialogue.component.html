@@ -1,0 +1,39 @@
+<p *ngIf="newVisitor">
+	Howdy, stranger. Haven't seen your face around here before. What's your name?
+</p>
+<div *ngIf="returningVisitor">
+	<p>
+		Hello again, Mr. {{lastname}}! The usual?
+	</p>
+	<app-theusual (usual)="handleGetusual($event)">
+	</app-theusual>
+</div>
+<p *ngIf="forgetUser">
+	Got it. Who are you again?
+</p>
+<div *ngIf="visitorInput">
+	Firstname:
+	<input  type="text" placeholder="Firstname" minlength="2"
+	(keyup)="enterFirstname($event)"
+	/>
+	Lastname:
+	<input type="text" placeholder="Lastname" minlength="2"
+	(keyup)="enterLastname($event)"
+	/>
+</div>
+<p *ngIf="makeOrder">
+	Alright Mr. {{lastname}}, what can I do you for?
+</p>
+<app-selectbeverage (selectedBeverage)="handleSelectedBeverage($event)">
+</app-selectbeverage>
+<p *ngIf="orderMessage">
+	One {{beverage}}, coming right up!
+</p>
+<div class="buttons">
+<button (click)="sendVisitorInfo()">
+	Order
+</button>
+<button (click)="forgetUeser()">
+	I was never here
+</button>
+</div>
